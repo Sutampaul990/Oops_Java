@@ -10,6 +10,7 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in); // Scanner class
+
         System.out.print("Enter the length of the Array : ");
         int n = sc.nextInt(); // Taking inputs for length of the array
         int arr[] = new int[n];
