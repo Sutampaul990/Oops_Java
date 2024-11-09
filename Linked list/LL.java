@@ -1,20 +1,21 @@
 public class LL {
     Node head;
-    class Node{
+
+    class Node {
 
         int data;
         Node next;
 
-        Node(int data){
+        Node(int data) {
             this.data = data;
             this.next = null;
         }
     }
 
-    // Add - first,middle,last  
-    public void addFirst(int data){
+    // Add - first
+    public void addFirst(int data) {
         Node newNode = new Node(data);
-        if(head == null){
+        if (head == null) {
             head = newNode;
             return;
         }
@@ -24,15 +25,15 @@ public class LL {
     }
 
     // insert middle
-    public void insertMiddle(int data,int pos){
+    public void insertMiddle(int data, int pos) {
         Node newNode = new Node(data);
         Node cur = head;
         int cnt = 1;
-        if(head == null){
+        if (head == null) {
             System.out.println("List is empty...");
             return;
         }
-        while(cnt < pos-1){
+        while (cnt < pos - 1) {
             cur = cur.next;
             cnt++;
         }
@@ -43,24 +44,56 @@ public class LL {
     }
 
     // Add - last
-    public void addLast(int data){
+    public void addLast(int data) {
         Node newNode = new Node(data);
-        if(head == null){
+        if (head == null) {
             head = newNode;
             return;
         }
         Node currNode = head;
-        while(currNode.next != null){
+        while (currNode.next != null) {
             currNode = currNode.next;
         }
         currNode.next = newNode;
     }
 
-    // print List
-    public void printList(){
-        if(head == null)    return;
+    // Delete first
+    public void deleteFirst() {
+        if(head == null){
+            System.out.println("Linked list is empty ....");
+            return;
+        }
+        System.out.println(head.data + " deleted successfully...");
+        head = head.next;
+    }
+
+    // Delete Last
+    public void deleteLast() {
         Node temp = head;
-        while(temp != null){
+        if(head == null){
+            System.out.println("Linked list is empty ....");
+            return;
+        }
+        if(head.next == null){
+            head = null;
+            System.out.println("List is empty");
+            return;
+        }
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+        System.out.println(temp.next.data + " deleted successfully...");
+        temp.next = null;
+    }
+
+    // print List
+    public void printList() {
+        if(head == null){
+            System.out.println("Linked list is empty ....");
+            return;
+        }
+        Node temp = head;
+        while (temp != null) {
             System.out.print(temp.data + "\t");
             temp = temp.next;
         }
@@ -69,6 +102,7 @@ public class LL {
 
     public static void main(String[] args) {
         LL list = new LL();
+        // Insert
         list.addFirst(10);
         list.addFirst(20);
         list.printList();
@@ -77,6 +111,11 @@ public class LL {
         list.addFirst(5);
         list.printList();
         list.insertMiddle(15, 4);
+        list.printList();
+        // Delete
+        list.deleteFirst();
+        list.printList();
+        list.deleteLast();
         list.printList();
     }
 }
