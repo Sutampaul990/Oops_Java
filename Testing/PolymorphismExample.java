@@ -8,7 +8,7 @@ class Subclass1 extends Parent {
     @Override
     public void show() {
         System.out.println("This is subclass 1");
-        ;
+
     }
 }
 
@@ -16,7 +16,7 @@ class Subclass2 extends Parent {
     @Override
     public void show() {
         System.out.println("This is subclass 2");
-        ;
+
     }
 }
 

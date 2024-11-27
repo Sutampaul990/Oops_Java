@@ -14,7 +14,7 @@ public class Circle {
     }
 
     public static void main(String[] args) {
-        Circle c1 = new Circle(5.25);
+        Circle c1 = new Circle(7);
         System.out.println("Area : " + c1.calculateArea());
         System.out.println("Circumference : " + c1.calculateCircumference());
     }
